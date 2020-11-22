@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Roboto;
+  src: url("../fonts/Roboto/Roboto-Medium.ttf");
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto !important;
+}
+::-webkit-scrollbar {
+  width: 3px !important;
+}
+::-webkit-scrollbar-thumb {
+  background: #0fd6e2 !important;
+}
+html,
+body,
+.App,
+#root {
+  height: 100%;
+  width: 100%;
+}

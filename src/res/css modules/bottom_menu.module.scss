@@ -1,0 +1,76 @@
+@font-face {
+  font-family: Dancing_Script;
+  src: url("../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Lobster;
+  src: url("../fonts/Lobster/logo.ttf");
+}
+
+.bottom_menu_con {
+  position: sticky;
+  bottom: 0;
+  border: solid 1px whitesmoke;
+  padding: 0 1em;
+  backdrop-filter: blur(10px);
+  height: 3em;
+  width: 100%;
+  color: #041368;
+  display: flex;
+  justify-content: space-between;
+  z-index: 5;
+  align-items: center;
+}
+.menu_items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5ss;
+}
+
+.search_con {
+  position: sticky;
+  padding: 0.2em;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #9dddf7;
+
+  border-radius: 0 0 10px 10px;
+  transition: top cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+.search_bar {
+  height: 2em;
+  width: 100%;
+  font-size: 20px;
+  padding: 0 2.5em 0 0.5em;
+  margin: 0;
+  border: solid 1px #e9e9e9;
+  border-radius: 10px;
+}
+.search_icon {
+  position: absolute;
+  right: 0;
+  font-size: 3em;
+  color: #9dddf7;
+  padding: 0.1em;
+  width: 100%;
+  border-radius: 10px 0 0px 10px;
+  height: 100%;
+  z-index: 10;
+}
+.micro_interaction {
+  color: rgb(16, 225, 240);
+  transform: rotateY(180deg);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-family: Dancing_Script !important;
+  }
+}
+.group_parent {
+  width: 100%;
+}
