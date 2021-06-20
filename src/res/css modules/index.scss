@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+$starColor: gold;
+$heartColor: red;
+$color: #1fb5ad; // #075c5f;
+$backgroundcolor: rgb(241, 239, 239);
+$drawerColor: black;
+$adminBgColor: #f1f2f7;
+$cardBackgroundColor: #ffffff;
+$boxShadow: 2px 2px 2px 1px rgba(221, 221, 221, 0.062),
+  -1px -1px 2px 1px rgba(221, 221, 221, 0.2);
+$transition: all ease-in-out 0.2s;
+$boxShadowHover: 2px 2px 5px 5px rgba(221, 221, 221, 0.062),
+  -1px -1px 5px 5px rgba(221, 221, 221, 0.1);
+@font-face {
+  font-family: Roboto-Medium;
+  src: url("../fonts/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: Operator-Mono;
+  src: url("../fonts/FontsFree-Net-OperatorMono-Medium.ttf");
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Raleway !important;
+  scroll-behavior: smooth !important;
+  scrollbar-color: $color #1212;
+  scrollbar-width: thin;
+}
+*[data-title] {
+  position: relative;
+}
+@mixin flex-box($jc) {
+  display: flex;
+  align-items: center;
+  justify-content: $jc;
+}
+
+*[data-title]::after {
+  position: absolute;
+  content: attr(data-title);
+  height: max-content;
+  width: max-content;
+  left: 10%;
+  top: 80%;
+  opacity: 0;
+  transition: $transition;
+
+  background-color: #0101012c;
+  border: silver solid 1px;
+  color: white;
+  border-radius: 10px;
+}
+*[data-title]:hover {
+  &::after {
+    opacity: 1;
+  }
+}
+::-webkit-scrollbar {
+  width: 2px !important;
+  height: 2px !important;
+  //position: absolute;
+}
+::-webkit-scrollbar-thumb {
+  background: #0fd7e25d !important;
+}
+html,
+body,
+.App,
+#root {
+  height: 100%;
+  width: 100%;
+  color: rgb(41, 40, 40) !important; //#041368 !important;
+  .star {
+    color: $starColor !important;
+  }
+  .heart {
+    color: $heartColor !important;
+  }
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+  background-color: red;
+  height: 100%;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  background-color: #1fb5ad;
+  transition: opacity 100ms ease-in;
+  height: 100%;
+}
+#root > div {
+  height: 100%;
+}
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
