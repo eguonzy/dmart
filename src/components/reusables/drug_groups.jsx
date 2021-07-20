@@ -8,6 +8,7 @@ const Groups = (props) => {
   const { title } = props;
   const { drugs } = props;
   //const [first, second, third, fourth] = props.group;
+  //
   return (
     <div className={styles.group_parent}>
       <p className={styles.title_parent}>
@@ -22,15 +23,16 @@ const Groups = (props) => {
         </span>
       </p>
       <div className={styles.group_con}>
-        {drugs &&drugs.map((drug) => (
-          <HomeCard
-            brand={drug.brand_name}
-            company={drug.manufacturer}
-            generic={drug.generic_name}
-            price={drug.price_unit}
-            image={drug.images[0]}
-          />
-        ))}
+        {drugs &&
+          drugs.map((drug) => (
+            <HomeCard
+              brand={drug.brand_name}
+              company={drug.manufacturer}
+              generic={drug.generic_name}
+              price={drug.price_unit}
+              image={drug.images[0]}
+            />
+          ))}
       </div>
     </div>
   );
