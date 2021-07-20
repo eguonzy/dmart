@@ -1,24 +1,29 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Route, Link } from "react-router-dom";
 import styles from "../../res/css modules/bottom_menu.module.scss";
 import BottomMenu from "../reusables/bottom_menu";
 import CategoryMenu from "../reusables/cartegory_menu";
-import Home from "./mart_homepage";
+import Home from "../mart_components/mart_homepage";
 import ItemsList from "../reusables/item_list";
 import Description from "./description";
 import { useDispatch, useSelector } from "react-redux";
 import { itemAdded } from "../../model/store/cart";
 import { account } from "../../model/store/account";
+import { fetchItems } from "../../model/store/items";
 import CartComponent from "./CartComponent";
 import Orders from "../account components/Orders";
 import { gsap } from "gsap";
 const Mart_Landing = (props) => {
   const Dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.entities.loader);
-  //Gsap.registerPlugin(ScrollTrigger);
+  const { loader, items } = useSelector((state) => state);
+  const { isLoading } = loader;
+
   //controls the click response of category first items like "all"
   //arrg is used to determine if the click is to take user to the list screen if true or to open a category menu
-
+  useEffect(() => {
+    Dispatch(fetchItems({ page_number: 1, page_size: 10 }));
+    console.log(props.history);
+  }, []);
   let prevScrollpos = window.pageYOffset;
   const handleCloseUserOptions = (e) => {
     gsap.to("." + styles.profile, {
@@ -936,7 +941,7 @@ const Mart_Landing = (props) => {
             {" "}
             <Component
               {...props}
-              drug_list={drug_list}
+              drug_list={items}
               handleAddToCart={handleAddToCart}
             />
           </Route>
@@ -949,7 +954,7 @@ const Mart_Landing = (props) => {
         </div>
       </div>
     );
-  }, [isLoading, props, Dispatch]);
+  }, [isLoading, props, Dispatch, items]);
 };
 
 export default Mart_Landing;

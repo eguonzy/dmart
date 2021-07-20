@@ -22,12 +22,13 @@ const Groups = (props) => {
         </span>
       </p>
       <div className={styles.group_con}>
-        {drugs.map((drug) => (
+        {drugs &&drugs.map((drug) => (
           <HomeCard
-            brand={drug.name}
-            company={drug.company}
-            generic="certain drug & that"
-            price={drug.price}
+            brand={drug.brand_name}
+            company={drug.manufacturer}
+            generic={drug.generic_name}
+            price={drug.price_unit}
+            image={drug.images[0]}
           />
         ))}
       </div>

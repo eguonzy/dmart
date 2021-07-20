@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
-import Slider from "react-slick/lib";
+import Slider from "react-slick";
 
 import "../../../res/css modules/description_page.scss";
 import "slick-carousel/slick/slick-theme.scss";

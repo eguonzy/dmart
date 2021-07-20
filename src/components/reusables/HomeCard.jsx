@@ -2,11 +2,11 @@ import React from "react";
 
 import ph1 from "../../res/images/drug.jpg";
 import styles from "../../res/css modules/mart_landing_group.module.scss";
-function HomeCard({ brand, price, item, generic, company }) {
+function HomeCard({ brand,image, price, item, generic, company }) {
   return (
     <div className={styles.group_card}>
       <div className={styles.card_image_con}>
-        <img src={ph1} className={styles.ph} alt="first drug" />
+        <img src={"/image/?src="+image} className={styles.ph} alt="first drug" />
       </div>
       <div className={styles.details_con}>
         <p className={styles.brand}>{brand}</p>

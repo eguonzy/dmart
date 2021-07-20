@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import Slider from "react-slick/lib";
+import Slider from "react-slick";
 import "../../res/css modules/description_page.scss";
 import "slick-carousel/slick/slick-theme.scss";
 import "slick-carousel/slick/slick.scss";

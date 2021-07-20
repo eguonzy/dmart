@@ -28,8 +28,8 @@ const CategoryMenu = (props) => {
       return;
     }
     if (arrg) {
-      await Dispatch({ type: "apiCallBegan", payload: arrg });
-      handleShowMenu();
+    //  await Dispatch({ type: "apiCallBegan", payload: arrg });
+      //handleShowMenu();
 
       await reverseTl();
       history.push("/items");

@@ -6,7 +6,8 @@ import loader from "./loader";
 import categoryMenu from "./categorymenu";
 import alert from "./alert";
 import preview from "./preview";
-
+import items from "./items";
+import user from "./user";
 export default combineReducers({
   cart,
   account,
@@ -15,4 +16,5 @@ export default combineReducers({
   alert,
   categoryMenu,
   preview,
+  items,
 });
