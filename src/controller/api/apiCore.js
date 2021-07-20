@@ -3,4 +3,4 @@ export default axios.create({
   headers: { Authorization: "Bearer " + localStorage.getItem("token") },
 });
 
-export const apiVersion = "/api/v1";
+export const apiVersion = "https://dm-node-server.herokuapp.com/api/v1";
